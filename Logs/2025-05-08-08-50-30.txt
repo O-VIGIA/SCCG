@@ -1,0 +1,25 @@
+[2025-05-08 08:50:30] [INFO]: {'enable_float16': False, 'restore_ckpt_strict': True, 'restore_hint': 40000, 'save_name': 'exp_007_01', 'eval_func': 'evaluate_indoor_dataset', 'sampler': {'batch_size': 2, 'sample_type': 'all_ordered', 'type': 'InferenceSampler', 'batch_shuffle': False, 'frames_all_limit': 720}, 'transform': [{'type': 'BaseSilTransform'}, {'type': 'BaseSilTransform'}, {'type': 'NoOperation'}, {'type': 'NoOperation'}], 'metric': 'euc', 'cross_view_gallery': False, 'mode': '3d2d'}
+[2025-05-08 08:50:30] [INFO]: {'model': 'PointGait', 'backbone_cfg_2d': {'type': 'ResNet9', 'in_channel': 1, 'block': 'BasicBlock', 'channels': [64, 128, 256, 512], 'layers': [1, 1, 1, 1], 'strides': [1, 2, 2, 1], 'maxpool': False}, 'backbone_cfg_3d_pc': {'k': 12, 'embed_dim': 512}, 'backbone_cfg_3d_rgv': {'type': 'ResNet9', 'in_channel': 3, 'block': 'BasicBlock', 'channels': [64, 128, 256, 512], 'layers': [1, 1, 1, 1], 'strides': [1, 2, 2, 1], 'maxpool': False}, 'SeparateFCs': {'in_channels': 512, 'out_channels': 256, 'parts_num': 16}, 'SeparateBNNecks': {'class_num': 251, 'in_channels': 256, 'parts_num': 16}, 'bin_num': [16], 'SeparateBNNecks_Text': {'class_num': 251, 'in_channels': 512, 'parts_num': 1}, 'SeparateBNNecks_Clip_Visual': {'class_num': 251, 'in_channels': 512, 'parts_num': 1}}
+[2025-05-08 08:50:30] [INFO]: ------------ Initilize Parameters ------------
+[2025-05-08 08:50:30] [INFO]: ------------ Initilize Parameters Done! ------------
+[2025-05-08 08:50:34] [INFO]: {'dataset_name': 'SUSTech1K', 'dataset_root': '/data2/user9/data/Gait/SUSTech1K-Released-Text-pkl/SUSTech1K-Released-512-pkl', 'num_workers': 1, 'dataset_partition': './datasets/SUSTech1K/SUSTech1K.json', 'remove_no_gallery': False, 'cache': False, 'test_dataset_name': 'SUSTech1K', 'data_in_use': [False, False, False, False, False, False, False, False, False, True, False, False, False, False, True, False, True, True], 'load_point_raw': False}
+[2025-05-08 08:50:34] [INFO]: -------- Test Pid List --------
+[2025-05-08 08:50:34] [INFO]: [0001, 0003, ..., 1055]
+[2025-05-08 08:50:40] [INFO]: Restore Parameters from output/SUSTech1K/PointGait/exp_007_01/checkpoints/exp_007_01-40000.pt !!!
+[2025-05-08 08:50:41] [INFO]: Parameters Count: 148.11662M
+[2025-05-08 08:50:41] [INFO]: Model Initialization Finished!
+[2025-05-08 09:20:56] [INFO]: ===Rank-1 (Exclude identical-view cases)===
+[2025-05-08 09:20:56] [INFO]: Normal@R1: [68.93 65.62 67.68 67.77 65.29 70.58 66.78 66.78 72.73 66.78 56.86 73.88]
+[2025-05-08 09:20:56] [INFO]: Bag@R1: [62.87 62.93 66.65 63.28 59.39 65.78 63.22 61.51 62.69 59.86 49.23 64.59]
+[2025-05-08 09:20:56] [INFO]: Clothing@R1: [35.86 38.13 35.35 34.34 34.34 34.09 26.77 29.80 31.82 39.65 32.58 44.19]
+[2025-05-08 09:20:56] [INFO]: Carrying@R1: [57.11 56.41 62.59 59.95 56.81 63.56 59.97 57.94 60.61 55.31 44.65 59.56]
+[2025-05-08 09:20:56] [INFO]: Umberalla@R1: [39.69 37.65 44.46 39.74 50.18 50.00 43.82 41.96 44.41 37.76 27.21 39.04]
+[2025-05-08 09:20:56] [INFO]: Uniform@R1: [52.67 51.58 60.94 54.84 59.49 61.27 56.72 54.25 59.04 53.66 40.02 56.22]
+[2025-05-08 09:20:56] [INFO]: Occlusion@R1: [71.80 70.13 78.29 67.90 68.65 77.37 76.07 71.43 78.29 68.09 66.05 75.33]
+[2025-05-08 09:20:56] [INFO]: Night@R1: [9.87 10.34 10.19 11.76 10.69 14.51 11.91 8.45 11.60 7.52 7.52 11.91]
+[2025-05-08 09:20:56] [INFO]: Overall@R1: [57.19 56.33 61.99 58.89 57.76 63.61 59.19 57.49 60.61 55.68 45.45 59.52]
+[2025-05-08 09:20:56] [INFO]: Normal@R1: 67.47%	Bag@R1: 61.83%	Clothing@R1: 34.74%	Carrying@R1: 57.87%	Umberalla@R1: 41.33%	Uniform@R1: 55.06%	Occlusion@R1: 72.45%	Night@R1: 10.52%	Overall@R1: 57.81%	
+[2025-05-08 09:20:56] [INFO]: Normal@R2: 78.44%	Bag@R2: 72.36%	Clothing@R2: 46.23%	Carrying@R2: 68.43%	Umberalla@R2: 53.79%	Uniform@R2: 67.13%	Occlusion@R2: 80.98%	Night@R2: 14.96%	Overall@R2: 68.42%	
+[2025-05-08 09:20:56] [INFO]: Normal@R3: 83.80%	Bag@R3: 77.06%	Clothing@R3: 52.69%	Carrying@R3: 73.42%	Umberalla@R3: 60.54%	Uniform@R3: 73.01%	Occlusion@R3: 84.71%	Night@R3: 17.91%	Overall@R3: 73.53%	
+[2025-05-08 09:20:56] [INFO]: Normal@R4: 86.89%	Bag@R4: 79.94%	Clothing@R4: 56.65%	Carrying@R4: 76.64%	Umberalla@R4: 65.32%	Uniform@R4: 76.80%	Occlusion@R4: 87.48%	Night@R4: 20.73%	Overall@R4: 76.80%	
+[2025-05-08 09:20:56] [INFO]: Normal@R5: 89.04%	Bag@R5: 82.01%	Clothing@R5: 59.66%	Carrying@R5: 78.90%	Umberalla@R5: 68.81%	Uniform@R5: 79.62%	Occlusion@R5: 89.07%	Night@R5: 23.03%	Overall@R5: 79.11%	
